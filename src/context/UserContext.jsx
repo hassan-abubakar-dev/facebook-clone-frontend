@@ -235,7 +235,7 @@ export const UserContextProvider = ({children}) => {
 
       useEffect(() => {
        
-     const newSocket = io('http://localhost:3000', {
+     const newSocket = io('https://facebook-clone-api-86g1.onrender.com/api', {
         query: {
             userId: logginUser.id
         }
