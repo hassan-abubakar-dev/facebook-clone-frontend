@@ -233,20 +233,20 @@ export const UserContextProvider = ({children}) => {
     }
     }, [profilePictureFetched, coverPhotoFetched, noCoverPhoto])
 
-      useEffect(() => {
-       
-     const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
-        query: {
-            userId: logginUser.id
-        }
-      });
-    
-    setSocket(newSocket);
+   useEffect(() => {
+  if (!logginUser?.id) return; // wait until we have the user
 
-    return () => {
-        newSocket.disconnect();
-    }
-    }, [logginUser.id]);
+  const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
+    query: { userId: logginUser.id },
+    transports: ['websocket', 'polling'] // ensures compatibility with Render
+  });
+
+  setSocket(newSocket);
+
+  return () => {
+    newSocket.disconnect();
+  }
+}, [logginUser?.id]);
 
     
 
