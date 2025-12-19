@@ -3,7 +3,7 @@ import publicAxiosInstance from "./publicAxiosInstance";
 
 
 const privateAxiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_BASE_API_LOCAL_URL,
+    baseURL: import.meta.env.VITE_BASE_API_URL,
     withCredentials: true,
     timeout: 1000000
 });
