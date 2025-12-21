@@ -30,7 +30,7 @@ const FindAccount = () => {
                     navigate('/password/verify', { state: { registeredEmail: inputValue } });
                 }
             } catch (err) {
-                console.log(err);
+                console.log('err', err.response);
               if(err){
                   setError(true);
                 setLoading(false);
