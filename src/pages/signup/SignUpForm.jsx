@@ -104,12 +104,12 @@ const SignUpForm = () => {
         surName: formData.surName,
         dateOfBirth,
         gender: realGender,
-        pronoun: formData.pronoun?.trim() || null,
+        pronoun: formData.pronoun || null,
         email: formData.email,
         password: formData.password
     };
 
-    if (formData.password.trim() !== '' && emailUsedProblem === false) {
+    if (formData.password !== '' && emailUsedProblem === false) {
         setIsLoading(true);
         try {
             const res = await publicAxiosInstance.post('/auths/register', body, {
@@ -120,7 +120,7 @@ const SignUpForm = () => {
                 navigate('/verify', { state: { registeredEmail: body.email } });
             }
         } catch (err) {
-            // console.log(err.response.data);
+            console.log(err.response);
             
             if (err.response) {
                 if (err.response.data.message === 'sorry this email is in use try different email') {
@@ -274,7 +274,7 @@ const SignUpForm = () => {
                             href="#">Cookies Policy.</a> You may receive SMS notifications from us and can opt out at any time
             </p>
             <div className="flex items-center">
-                <button
+                <button disabled={isLoading}
                     className="bg-green-600 md:ml-25 ml-12 text-white text-nowrap py-1 px-18 font-bold text-[18px] inline-block rounded-md cursor-pointer mt-5">
                     Sign Up
                 </button>

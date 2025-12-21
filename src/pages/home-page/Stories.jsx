@@ -15,7 +15,7 @@ import { useUserContext } from '../../context/UserContext'
 export function Stories(){
 
     const [loadingStories, setLoadingStories] = useState(true);
-    const {postIsOpen, logginUser} = useUserContext();
+    const {postIsOpen, logginUser, navigateToProfile} = useUserContext();
 
     const friendsElement = useRef(null);
     const navigate = useNavigate();
@@ -105,7 +105,7 @@ const [stories, setSties] = useState([]);
 				<div key={story.id} className={`w-28 min-w-28   bg-white  h-48 rounded-2x relative shadow-md overflow-y-hidden`}>
 					{story.image && (<img src={story.image} alt="" className='w-full h-full object-cover position-top '/>)}
                    {story.text &&  <p className='mt-17 mx-2 text-sm wrap-break-word leading-4 h-[200px] overflow-hidden'>{story.text}</p>}
-					<div className='w-12 h-12 border-4 border-blue-700 rounded-full absolute top-4 left-3'>
+					<div className='w-10 h-10 border-4 border-blue-700 rounded-full absolute top-4 left-3 cursor-pointer' onClick={() => {navigateToProfile(story.User)}}>
 						<img src={story.User?.profile?.image} alt="" className='w-full h-full rounded-full'/>
 					</div>
 					<p className='absolute -top-0.5 leading-[19px] ml-1    font-bold'>

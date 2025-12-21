@@ -233,22 +233,37 @@ export const UserContextProvider = ({children}) => {
     }
     }, [profilePictureFetched, coverPhotoFetched, noCoverPhoto])
 
-   useEffect(() => {
-  if (!logginUser?.id) return; // wait until we have the user
+      useEffect(() => {
+       
+     const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
+        query: {
+            userId: logginUser.id
+        }
+      });
+    
+    setSocket(newSocket);
 
-  const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
-    query: { userId: logginUser.id },
-    transports: ['websocket', 'polling'] // ensures compatibility with Render
-  });
-
-  setSocket(newSocket);
-
-  return () => {
-    newSocket.disconnect();
-  }
-}, [logginUser?.id]);
+    return () => {
+        newSocket.disconnect();
+    }
+    }, [logginUser.id]);
 
     
+//    useEffect(() => {
+//   if (!logginUser?.id) return; // wait until we have the user
+
+//   const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
+//     query: { userId: logginUser.id },
+//     transports: ['websocket', 'polling'] // ensures compatibility with Render
+//   });
+
+//   setSocket(newSocket);
+
+//   return () => {
+//     newSocket.disconnect();
+//   }
+// }, [logginUser?.id]);
+
 
     return (
         <UserContext.Provider value={

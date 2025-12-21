@@ -27,7 +27,7 @@ const LoggingPage = () => {
     const logging = async (e) => {
         e.preventDefault();
 
-        if (formData.email.trim() !== '' && formData.password.trim() !== '') {
+        if (formData.email && formData.password) {
 
 
             const body = {
@@ -56,7 +56,7 @@ const LoggingPage = () => {
                 }
 
             } catch (error) {
-                console.log(error.message);
+                console.log(error.response);
                 setLoading(false);
                 if (error) {
                     setInvalidCredentials(true)
@@ -90,7 +90,7 @@ const LoggingPage = () => {
 
                 <div className="flex flex-col gap-2 items-start mt-5">
                     <button
-                        type="submit" className="bg-blue-600 email-password text-white cursor-pointer font-bold text-xl " onClick={logging}>
+                        type="submit" className="bg-blue-600 email-password text-white cursor-pointer font-bold text-xl " disabled={loading} onClick={logging}>
                         Log in
                     </button>
                     {loading && <div class="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto "></div>}

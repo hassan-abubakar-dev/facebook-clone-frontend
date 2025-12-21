@@ -162,7 +162,7 @@ const FriendSuggestion = () => {
 
                             {!addedUserIds.includes(user.id) && (
                                 <button
-                                    className="text-[13px] cursor-pointer -ml-4 py-1.5 px-7 text-nowrap rounded-md font-medium mr-3 bg-gray-200 mt-5.5"
+                                    className="text-[13px] cursor-pointer absolute -right-2 py-1.5 px-7 text-nowrap rounded-md font-medium mr-3 bg-gray-200 mt-5.5"
                                     onClick={(e) => {
                                         e.stopPropagation()
                                         remove(user.id)

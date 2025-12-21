@@ -39,7 +39,7 @@ export default function StoryCreatePage() {
     setLoading(true);
 
     if (!requestIdRef.current) {
-      requestIdRef.current = crypto.randomUUID;
+      requestIdRef.current = crypto.randomUUID();
     }
     const formData = new FormData();
     formData.append("requestId", requestIdRef.current);
@@ -58,6 +58,7 @@ export default function StoryCreatePage() {
         navigate('/home');
       }
     } catch (err) {
+      console.log(err.response)
       setLoading(false);
       if (err.response?.data?.message === 'this type is not allow') {
         alert('Sorry this type is not allowed, choose a different image to create your story.')

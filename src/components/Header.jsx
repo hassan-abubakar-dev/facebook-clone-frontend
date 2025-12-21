@@ -23,6 +23,7 @@ export function Header(){
 
 
 
+
     const socketRef = useRef(null);
 
    
@@ -73,7 +74,9 @@ export function Header(){
         catch(err){
             if(err)
            {
-            setError(true)
+            setError(true);
+            
+            
            }
             
         }
@@ -220,13 +223,13 @@ const seeAllNotifications = () => {
                </div>
 
                
-                 <div className='hover:bg-gray-200 px-10 pt-2 rounded-xl cursor-pointer' onClick={() => {navigate('/feedback')}}>
-                    {<MessageSquare className='h-7 w-7' />}
+                 <div className='hover:bg-gray-200 px-10 pt-2 rounded-xl cursor-pointer' onClick={() => getHeaderClickedValue('feedback')}>
+                    {<MessageSquare className={`h-7 w-7 ${headerClickedValue === 'feedback'? 'text-blue-700' : 'text-black'}`} />}
                 </div>
 
                 {logginUser.role === 'admin' && (
-                     <div className='hover:bg-gray-200 px-11 rounded-xl pt-3 cursor-pointer ml-10 ' onClick={() => getHeaderClickedValue('home')}>
-                    {<MessageSquareLock className={`h-6 w-6 ${headerClickedValue === 'home'? 'text-blue-700' : 'text-black'}`} />}
+                     <div className='hover:bg-gray-200 px-11 rounded-xl pt-3 cursor-pointer ml-10 ' onClick={() => getHeaderClickedValue('feedback/view')}>
+                    {<MessageSquareLock className={`h-6 w-6 ${headerClickedValue === 'feedback/view'? 'text-blue-700' : 'text-black'}`} />}
                 </div>
                 )}
             </div>
