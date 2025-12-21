@@ -58,7 +58,7 @@ export default function StoryCreatePage() {
         navigate('/home');
       }
     } catch (err) {
-      console.log(err.response)
+      // console.log(err.response)
       setLoading(false);
       if (err.response?.data?.message === 'this type is not allow') {
         alert('Sorry this type is not allowed, choose a different image to create your story.')

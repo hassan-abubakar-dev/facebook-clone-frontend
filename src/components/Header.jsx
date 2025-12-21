@@ -66,12 +66,16 @@ export function Header(){
         try{
             const res = await privateAxiosInstance.post('/auths/logout');
             if(res.status < 400){
+                console.log(res.data);
+                
                 localStorage.removeItem('accessToken');
                 setProfileOptions(false);
                 navigate('/logging', {replace: true})
             }
         }
         catch(err){
+            console.log(err.response);
+            
             if(err)
            {
             setError(true);
