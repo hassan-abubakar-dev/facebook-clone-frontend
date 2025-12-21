@@ -30,7 +30,7 @@ const FindAccount = () => {
                     navigate('/password/verify', { state: { registeredEmail: inputValue } });
                 }
             } catch (err) {
-                // console.log(err);
+                console.log(err);
               if(err){
                   setError(true);
                 setLoading(false);
@@ -83,7 +83,7 @@ const FindAccount = () => {
                         Cancel
                     </button>
 
-                    <button type="submit" className="bg-blue-600 py-2 px-4 rounded-md text-white text-[15px] cursor-pointer font-bold" >
+                    <button type="submit" disabled={loading} className="bg-blue-600 py-2 px-4 rounded-md text-white text-[15px] cursor-pointer font-bold" >
                         Search
                     </button>
                 </div>

@@ -120,7 +120,7 @@ const SignUpForm = () => {
                 navigate('/verify', { state: { registeredEmail: body.email } });
             }
         } catch (err) {
-            console.log(err.response);
+            console.log('sign up', err.response);
             
             if (err.response) {
                 if (err.response.data.message === 'sorry this email is in use try different email') {
