@@ -30,7 +30,7 @@ const FindAccount = () => {
                     navigate('/password/verify', { state: { registeredEmail: inputValue } });
                 }
             } catch (err) {
-                console.log('err', err.response);
+                // console.log('err', err.response);
               if(err){
                   setError(true);
                 setLoading(false);
@@ -65,6 +65,7 @@ const FindAccount = () => {
                         <p className="text-[14px] leading-4 mt-0.5">Your search did not return any results. Please try again with other information.</p>
                     </div>
                 )}
+               
                 <p className="text-[16px] text-left">
                     Please enter your email address  to search for your account.
                 </p>
