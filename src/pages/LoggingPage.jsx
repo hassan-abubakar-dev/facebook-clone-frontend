@@ -77,6 +77,11 @@ const LoggingPage = () => {
             <h2 className="text-[42px] text-blue-600 font-bold pt-7 mb-2">
                 facebook
             </h2>
+            <div className="w-full overflow-hidden bg-gray-100 py-1 flex -mt-5 mb-3">
+      <div className="whitespace-nowrap animate-marquee text-lg text-gray-600 mx-auto">
+        This is a personal educational project and is not affiliated with Facebook or Meta.
+      </div>
+    </div>
             <form className="md:w-[430px] w-full bg-white justify-self-center rounded-md shadow-xl pb-5 mb-14">
                 <h3 className="text-gray-600 pt-5 pb-5 text-xl ml-4">Log in to Facebook</h3>
 

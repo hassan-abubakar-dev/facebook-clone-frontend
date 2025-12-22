@@ -3,6 +3,7 @@ const SignUpFooter = () => {
 
     return (
         <div className="bg-white  md:pl-[184px] pl-[20px]  md:pt-7 pt-1.5 pr-40">
+           
                 <div className="text-left text-[13px] text-blue-800">
                     English (UK) <a href="" className="hover:underline ml-2 mr-2">Hausa</a><a href="" className="hover:underline">Français (France)</a> <a href="" className="hover:underline ml-2">Português (Brasil)</a> <a href="" className="hover:underline ml-2">Español</a> <a href="" className="hover:underline ml-2">العربية</a> <a href="" className="hover:underline ml-2">Bahasa Indonesia</a>
                     <a href="" className="hover:underline ml-2">Deutsch</a> <a href="" className="hover:underline ml-2">日本語</a> <a href="" className="hover:underline ml-2">Italiano</a> <a href="" className="hover:underline ml-2">हिन्दी</a>
