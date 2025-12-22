@@ -104,6 +104,9 @@ const PasswordVerificationPage = () => {
                 <p className="text-[16px] text-left">
                     Please check your emails for a message with your code. Your code is 6 numbers long.
                 </p>
+                 <p className="text-[16px] text-left mt-1">
+                    If you don't see it, please check your spam or junk folder
+                </p>
                 <p className={`text-red-500 text-left mt-2 -mb-4 ${invalidCode === false && 'hidden'}`}>
                     invaid or expire code
                 </p>
