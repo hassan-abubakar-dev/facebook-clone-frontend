@@ -95,9 +95,12 @@ export function Header(){
            const res = await getUsers(1, 50, textValue);
             if(res.status < 400){
                 setUsersSearch(res.data.users);
+                console.log(res.data);
+                
             }  
         }
         catch(err){
+            console.log(err.response)
            if(err){
             setError(true);
            }
