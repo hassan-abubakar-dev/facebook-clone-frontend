@@ -258,7 +258,7 @@ const SignUpForm = () => {
 
             <input type="text" name="email" placeholder="Mobile number or email address" onChange={getFormValues}
                 className="email-password mb-3" />
-            <input type="text" name="password" placeholder="New password" onChange={getFormValues}
+            <input type="text" name="password" placeholder="password" onChange={getFormValues}
                 className="email-password -mt-1"
             />
 

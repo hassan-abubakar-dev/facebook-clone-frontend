@@ -34,7 +34,7 @@ export default function ResetNewPasswordPage() {
       }
     }
     catch (err) {
-      console.log(err.response.data);
+      // console.log(err.response.data);
       setLoading(false);
       if(err.response.data.message === 'first and second password mismatch'){ 
         setMismatchPasswordError(true)
