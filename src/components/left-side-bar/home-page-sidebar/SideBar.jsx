@@ -47,7 +47,7 @@ export function SideBar(){
     {
       id: '3c474488-75ec-4c69-82e3-4ef2d055815b',
       Image: TvMinimalPlay,
-      text: 'Vidio',
+      text: 'Vedio',
       profile: 'icon'
     },
     {
