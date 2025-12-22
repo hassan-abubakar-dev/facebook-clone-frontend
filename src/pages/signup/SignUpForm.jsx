@@ -23,7 +23,7 @@ const SignUpForm = () => {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const years = [];
 
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 31; i++) {
         days.push(i)
     }
 
