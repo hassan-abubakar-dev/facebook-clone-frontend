@@ -235,7 +235,7 @@ export const UserContextProvider = ({children}) => {
 
       useEffect(() => {
        
-     const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
+     const newSocket = io(import.meta.env.VITE_BASE_SOCKET_URL, {
         query: {
             userId: logginUser.id
         }
@@ -252,7 +252,7 @@ export const UserContextProvider = ({children}) => {
 //    useEffect(() => {
 //   if (!logginUser?.id) return; // wait until we have the user
 
-//   const newSocket = io('https://facebook-clone-api-86g1.onrender.com', {
+//   const newSocket = io(import.meta.env.VITE_BASE_SOCKET_URL, {
 //     query: { userId: logginUser.id },
 //     transports: ['websocket', 'polling'] // ensures compatibility with Render
 //   });
